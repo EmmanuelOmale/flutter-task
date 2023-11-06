@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:profile/screens/profile/list.dart';
 import 'package:profile/screens/profile/profile.dart';
 import 'package:profile/utils/utils.dart';
+import 'package:profile/screens/profile/personal_details.dart';
 
 class MyHomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -225,32 +226,6 @@ class MyHomePage extends StatelessWidget {
   }
 
   void _showProfileDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Stack(
-          children: [
-            BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-              child: Container(
-                color: Colors.black.withOpacity(0.5),
-              ),
-            ),
-            AlertDialog(
-              title: Text("Profile"),
-              content: Text("This is the user's profile information."),
-              actions: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("Close"),
-                ),
-              ],
-            ),
-          ],
-        );
-      },
-    );
+    PersonalDetailsScreen.show(context);
   }
 }
