@@ -3,8 +3,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:profile/screens/list.dart';
-import 'package:profile/screens/profile.dart';
+import 'package:profile/screens/profile/list.dart';
+import 'package:profile/screens/profile/profile.dart';
 import 'package:profile/utils/utils.dart';
 
 class MyHomePage extends StatelessWidget {
