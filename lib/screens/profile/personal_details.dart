@@ -11,7 +11,7 @@ class ProfileDetailsScreen {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: ClipRRect(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
@@ -50,6 +50,16 @@ class ProfileDetailsScreen {
                             ),
                           ),
                         ),
+                        const SizedBox(height: 30),
+                        const Text('Full Name',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                            )),
+                        const Text('Email Address',
+                            style: TextStyle(
+                                color: Color.fromRGBO(18, 18, 18, 0.60),
+                                fontSize: 15)),
                         const SizedBox(height: 40),
                         const Text(
                           'Personal Details',
@@ -59,17 +69,16 @@ class ProfileDetailsScreen {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        const Text('Full Name'),
                         Container(
                           width: 366,
-                          padding: EdgeInsets.all(20),
+                          padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8),
                           ),
                           child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              //SizedBox(height: 5),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -78,6 +87,7 @@ class ProfileDetailsScreen {
                                   Text('Timothy'),
                                 ],
                               ),
+                              SizedBox(height: 10), // space
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -86,12 +96,16 @@ class ProfileDetailsScreen {
                                   Text('Banjoko'),
                                 ],
                               ),
+                              SizedBox(height: 10), // space
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('Phone number'),
                                   Text('08160971841'),
                                 ],
                               ),
+                              SizedBox(height: 10), // space
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -105,12 +119,17 @@ class ProfileDetailsScreen {
                                   ),
                                 ],
                               ),
+                              SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text('BVN'),
-                                  Text('222222*******'),
+                                  Text(
+                                    '222222*******',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
                             ],
@@ -125,25 +144,40 @@ class ProfileDetailsScreen {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Bompaytag'),
-                            Row(
-                              children: [
-                                Text('@koko231'),
-                                Icon(Icons.edit),
-                              ],
-                            ),
-                          ],
+                        Container(
+                          width: 366,
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Bompaytag'),
+                              Row(
+                                children: [
+                                  Text('@Koko231'),
+                                  Icon(Icons.edit),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 170),
                         ElevatedButton(
-                          onPressed: () {
-                            // Handle delete account action
-                          },
-                          child: Text('DELETE ACCOUNT'),
-                        ),
+                            onPressed: () {
+                              // Handle delete account action
+                            },
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text('DELETE ACCOUNT',
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                    ))
+                              ],
+                            )),
                       ],
                     ),
                   ),
