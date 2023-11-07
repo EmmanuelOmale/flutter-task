@@ -226,6 +226,6 @@ class MyHomePage extends StatelessWidget {
   }
 
   void _showProfileDialog(BuildContext context) {
-    PersonalDetailsScreen.show(context);
+    ProfileDetailsScreen.displayButomSheet(context);
   }
 }
