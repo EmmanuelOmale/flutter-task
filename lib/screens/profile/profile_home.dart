@@ -1,12 +1,7 @@
-import 'dart:collection';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:profile/screens/profile/list.dart';
-import 'package:profile/screens/profile/profile.dart';
 import 'package:profile/utils/utils.dart';
-import 'package:profile/screens/profile/personal_details.dart';
+import 'package:profile/screens/profile/profile_details.dart';
 
 class MyHomePage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
