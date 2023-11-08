@@ -1,9 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:profile/screens/profile/edit_bompaytag.dart';
 
 class ProfileDetailsScreen {
-  static Future displayButomSheet(BuildContext context) {
+  static Future<void> displayButomSheet(BuildContext context) {
     return showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -88,7 +89,7 @@ class ProfileDetailsScreen {
                                   Text('Timothy'),
                                 ],
                               ),
-                              SizedBox(height: 10), // space
+                              SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -97,7 +98,7 @@ class ProfileDetailsScreen {
                                   Text('Banjoko'),
                                 ],
                               ),
-                              SizedBox(height: 10), // space
+                              SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -106,7 +107,7 @@ class ProfileDetailsScreen {
                                   Text('08160971841'),
                                 ],
                               ),
-                              SizedBox(height: 10), // space
+                              SizedBox(height: 10),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -152,33 +153,42 @@ class ProfileDetailsScreen {
                             border: Border.all(color: Colors.grey),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Bompaytag'),
-                              Row(
+                              InkWell(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      context: context,
+                                      builder: (context) {
+                                        return const EditBompayTagScreen();
+                                      });
+                                },
+                                child: const Text('Bompaytag'),
+                              ),
+                              const Row(
                                 children: [
                                   Text('@Koko231'),
                                   Icon(Icons.edit),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ),
                         const SizedBox(height: 170),
                         ElevatedButton(
-                            onPressed: () {
-                              // Handle delete account action
-                            },
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text('DELETE ACCOUNT',
-                                    style: TextStyle(
-                                      color: Colors.red,
-                                    ))
-                              ],
-                            )),
+                          onPressed: () {},
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('DELETE ACCOUNT',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                  )),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -190,4 +200,14 @@ class ProfileDetailsScreen {
       },
     );
   }
+
+//   static void _editBomopayTag(BuildContext context) {
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(
+//         builder: (context) => EditBompayTagScreen(),
+//       ),
+//     );
+//   }
+// }
 }

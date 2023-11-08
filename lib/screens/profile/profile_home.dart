@@ -41,12 +41,12 @@ class MyHomePage extends StatelessWidget {
   Icon getIcon(String iconName) {
     switch (iconName) {
       case "verified_user":
-        return Icon(Icons.verified_user);
+        return const Icon(Icons.verified_user);
       case "settings":
-        return Icon(Icons.settings);
+        return const Icon(Icons.settings);
 
       default:
-        return Icon(Icons.error);
+        return const Icon(Icons.error);
     }
   }
 
@@ -72,7 +72,7 @@ class MyHomePage extends StatelessWidget {
                         Utils.sizedBoxheight(30),
                         Container(
                             width: MediaQuery.sizeOf(context).width,
-                            child: Text(
+                            child: const Text(
                               "Hello!",
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white),
@@ -98,7 +98,7 @@ class MyHomePage extends StatelessWidget {
                         Utils.sizedBoxheight(10),
                         Container(
                             width: MediaQuery.sizeOf(context).width,
-                            child: Text(
+                            child: const Text(
                               "Assume control of your account and make edits here.!",
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white),
@@ -112,7 +112,7 @@ class MyHomePage extends StatelessWidget {
             Container(
               width: 79,
               height: 100,
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.pink,
