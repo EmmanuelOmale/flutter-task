@@ -22,7 +22,7 @@ class ProfileDetailsScreen {
                 children: <Widget>[
                   Positioned.fill(
                     child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                      filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
                       child: Container(
                         color: Colors.black.withOpacity(0.5),
                       ),
@@ -162,7 +162,10 @@ class ProfileDetailsScreen {
                                       isScrollControlled: true,
                                       context: context,
                                       builder: (context) {
-                                        return const EditBompayTagScreen();
+                                        return const SingleChildScrollView(
+                                          child:
+                                              EditBompayTagScreen(), //////////   This is where your are currently working
+                                        );
                                       });
                                 },
                                 child: const Text('Bompaytag'),
