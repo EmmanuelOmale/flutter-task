@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:profile/components/save_changes_button.dart';
+import 'package:profile/components/buttons/discard_changes_button.dart';
+import 'package:profile/components/buttons/save_changes_button.dart';
 
 class EditBompayTagScreen extends StatelessWidget {
   const EditBompayTagScreen({Key? key}) : super(key: key);
@@ -21,7 +22,6 @@ class EditBompayTagScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Add your widgets and content for editing here
             Container(
               alignment: Alignment.topRight,
               child: IconButton(
@@ -112,23 +112,31 @@ class EditBompayTagScreen extends StatelessWidget {
                       const SizedBox(height: 8),
                       Container(
                         width: 355,
-                        padding: const EdgeInsets.fromLTRB(30, 30, 5, 30),
+                        padding: const EdgeInsets.fromLTRB(30, 10, 5, 10),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        // Add your content inside the container
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            hintText: 'e.g @ Koko231',
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 170),
                       const SaveChangesButton(
                         onPressed: _handleSaveChanges,
                       ),
+                      const SizedBox(height: 10),
+                      const DiscardChangesButton(
+                        onPressed: _handleDiscardChanges,
+                      )
                     ],
                   ),
                 ],
               ),
             ),
-            // Include another container here
           ],
         ),
       ),
@@ -139,4 +147,8 @@ class EditBompayTagScreen extends StatelessWidget {
 void _handleSaveChanges() {
   // Save changes logic will be written here.
   print('Changes saved');
+}
+
+void _handleDiscardChanges() {
+  print('Changes discarded');
 }
