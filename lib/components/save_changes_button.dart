@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 
 class SaveChangesButton extends StatelessWidget {
-  const SaveChangesButton({super.key, required this.buttonText});
+  final VoidCallback onPressed;
+  final Color buttonColor;
 
-  final String buttonText;
+  const SaveChangesButton({
+    Key? key,
+    required this.onPressed,
+    this.buttonColor = Colors.blue,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text(buttonText),
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        primary: buttonColor,
+      ),
+      child: const Center(
+        child: Text(
+          'Save Changes',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
     );
   }
 }
